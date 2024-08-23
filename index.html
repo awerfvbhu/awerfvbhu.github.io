@@ -15,7 +15,7 @@
     <script>
         function fds() {
             var aaa = document.getElementById("jhg").value
-            var www = aaa.split(","); 
+            var www = aaa.split(/[,，]/); 
             var bbb = www.sort()
             document.getElementById("sde").innerHTML = bbb
         }
