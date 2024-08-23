@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>请输入数字，并以“，”分隔开</p>
+    <input  id="jhg">
+    <button onclick="fds()">确认</button>
+    <p id="sde"></p>
+    <script>
+        function fds() {
+            var aaa = document.getElementById("jhg").value
+            var www = aaa.split(","); 
+            var bbb = www.sort()
+            document.getElementById("sde").innerHTML = bbb
+        }
+    </script>
+
+<hr>
+
+    <p>请输入数字或字母或汉字，并以“，”分隔开</p>
+    <input id="poi">
+    <button onclick="ooo()">确认</button>
+    <p id="qwe"></p>
+    <p id="wer"></p>
+    <p id="rty"></p>
+    <script>
+        function ooo() {
+            var aaa = document.getElementById('poi').value;
+            var www = aaa.split(/[,，]/);
+            var shuzi = [];
+            var wenzi = [];
+            var zimu = [];
+            for (var i = 0; i < www.length; i++) {
+                var asd = Number(www[i]);
+                if (!isNaN(asd)) {
+                    shuzi.push(www[i]);
+                } else if (/[a-zA-Z]/.test(www[i])) {
+                    zimu.push(www[i]);
+                }
+                else { wenzi.push(www[i]); }
+            }
+            var shuzi=shuzi.sort()
+            document.getElementById('qwe').innerHTML = "数字为:" + shuzi.join(', ');
+            document.getElementById('wer').innerHTML = "文字为:" + wenzi.join(', ');
+            document.getElementById('rty').innerHTML = "字母为:" + zimu.join(', ');
+        }
+    </script>
+
+</body>
+
+</html>
