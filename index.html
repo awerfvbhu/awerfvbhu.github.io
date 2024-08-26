@@ -4,52 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>随机抽人游戏</title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            border-radius: 20px;
+        }
+
+        .class1 {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            gap: 110px;
+        }
+
+        .class2 {
+            background-color: rgba(204, 204, 255, 0.5);
+            width: 200px;
+            height: 300px;
+            border-radius: 20px;
+
+        }
+
+        .class3 {
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <p>请输入数字，并以“，”分隔开</p>
-    <input  id="jhg">
-    <button onclick="fds()">确认</button>
-    <p id="sde"></p>
-    <script>
-        function fds() {
-            var aaa = document.getElementById("jhg").value
-            var www = aaa.split(/[,，]/); 
-            var bbb = www.sort()
-            document.getElementById("sde").innerHTML = bbb
-        }
-    </script>
+    <div>
+        <div class="class3">
+            <button onclick="change()">抽取姓名</button>
+        </div>
 
-<hr>
+        <div class="class1">
+            <div class="class2">
+                <p id="$name"></p>
+            </div>
+            <div class="class2">
+                <p id="get-name"></p>
+            </div>
+            <div class="class2">
+                <p id="finish-name"></p>
+            </div>
+        </div>
 
-    <p>请输入数字或字母或汉字，并以“，”分隔开</p>
-    <input id="poi">
-    <button onclick="ooo()">确认</button>
-    <p id="qwe"></p>
-    <p id="wer"></p>
-    <p id="rty"></p>
+    </div>
+
+
+
     <script>
-        function ooo() {
-            var aaa = document.getElementById('poi').value;
-            var www = aaa.split(/[,，]/);
-            var shuzi = [];
-            var wenzi = [];
-            var zimu = [];
-            for (var i = 0; i < www.length; i++) {
-                var asd = Number(www[i]);
-                if (!isNaN(asd)) {
-                    shuzi.push(www[i]);
-                } else if (/[a-zA-Z]/.test(www[i])) {
-                    zimu.push(www[i]);
-                }
-                else { wenzi.push(www[i]); }
-            }
-            var shuzi=shuzi.sort()
-            document.getElementById('qwe').innerHTML = "数字为:" + shuzi.join(', ');
-            document.getElementById('wer').innerHTML = "文字为:" + wenzi.join(', ');
-            document.getElementById('rty').innerHTML = "字母为:" + zimu.join(', ');
+// 这里可能出现数组的名字带有引号情况，可用for解决
+
+        const name = ['陈红', '张梦琪', '李浩宇', '王雪莹', '赵云飞', '周浩然', '吴梦瑶', '郑子轩', '王诗雅', '赵俊杰', '刘心怡',
+            '孙晓晨', '李欣怡', '张晨曦', '陈逸风', '刘梓涵', '孙雨辰', '周泽宇', '吴佳怡', '郑浩南', '王若曦', '赵子涵', '李思琪',
+            '张雨轩', '陈俊豪', '刘梦瑶', '孙逸晨', '周心怡', '吴思远', '郑雪莹', '王浩宇', '赵晨曦', '李梦琪',
+            '张逸风', '陈子轩', '刘诗雅', '孙俊杰', '周欣怡', '吴晨曦', '郑逸风']
+        const finish = []
+        document.getElementById("$name").innerHTML = name
+        function change() {
+            let x = Math.floor(Math.random() * name.length);
+            document.getElementById("get-name").innerHTML = name[x]
+            
+            finish.push(name[x])
+            name.splice(x, 1)
+            
+            document.getElementById("$name").innerHTML = name
+            document.getElementById("finish-name").innerHTML = finish
         }
+
+
     </script>
 
 </body>
