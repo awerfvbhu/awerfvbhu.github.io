@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的网站</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+
+        .all {
+            display: flex;
+            width: 100%;
+            height: 2000px;
+            background-color: bisque;
+        }
+
+        .left1 {
+            position: fixed;
+            width: 15%;
+            height: 2000px;
+            background-image: url(./网页背景.png);
+            display: flex;
+            flex-direction: column
+        }
+
+        .left2 {
+            width: 15.4%;
+            height: 2000px;
+            background-color: Coral;
+            display: flex;
+            flex-direction: column
+        }
+
+        .right {
+            width: 85%;
+            height: 2000px;
+            background-color: white;
+            display: flex;
+            flex-direction: column
+        }
+
+        .navigation {
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            color: aliceblue;
+            font-size: 25px;
+            margin-top: 10%;
+            cursor: pointer;
+        }
+
+        .person-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: solid white 4px;
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .picture {
+            width: 99%;
+            height: 350px;
+            border: solid white;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides {
+            width: 600%;
+            display: flex;
+            animation: slide 12.5s infinite;
+        }
+
+        .slides img {
+            width: 16.66%;
+            object-fit: cover;
+            height: 100%;
+        }
+
+        @keyframes slide {
+
+            0%,
+            16.66% {
+                transform: translateX(0);
+            }
+
+            16.67%,
+            33.32% {
+                transform: translateX(-16.66%);
+            }
+
+            33.33%,
+            50% {
+                transform: translateX(-33.33%);
+            }
+
+            50.01%,
+            66.66% {
+                transform: translateX(-50%);
+            }
+
+            66.67%,
+            83.32% {
+                transform: translateX(-66.66%);
+            }
+
+            83.33%,
+            100% {
+                transform: translateX(-83.33%);
+            }
+        }
+
+        .grey {
+            background-color: #ececea;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .project1 {
+            background-color: aqua;
+            width: 450px;
+            margin-left: 10%;
+        }
+
+        .project2 {
+            background-color: cornsilk;
+            width: 450px;
+            margin-left: 10%;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input {
+            margin: 0 auto;
+            width: 80%;
+            height: 100px;
+            border-radius: 10px;
+            font-size: 100%;
+        }
+
+        .button1 {
+            width: 40%;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 100%;
+        }
+
+        a {
+            color: white;
+        }
+
+        .logo {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            background-color: coral;
+            z-index: 1;
+            clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+
+        }
+
+        .carousel-control1 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 5px;
+            background-color: rgba(255, 127, 80, 0.8);
+            color: white;
+            border: none;
+            font-size: 16px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border-radius: 20%;
+        }
+
+        .carousel-control2 {
+            position: absolute;
+            right: 1px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 5px;
+            background-color: rgba(255, 127, 80, 0.8);
+            color: white;
+            border: none;
+            font-size: 16px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border-radius: 20%;
+        }
+
+        .move-left {
+            transform: translateX(16.6%);
+            transition: transform 0.5s;
+            /* 添加过渡效果 */
+        }
+
+        .text {
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            text-align: center;
+        }
+        dt{font-size: 40px;}
+        dd{font-size: 20px;}
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="left1">
+            <img class="person-photo" src="./头像.png">
+            <p style="color: white;font-size: 22px;text-align: center;">
+                <a href="./相册跳转.html">📷相册</a>|
+                <a href="./留言.html">✉留言</a>
+            </p>
+            <div class="navigation" id="Sec1"><a href="#section1">✩基本信息</a></div>
+            <div class="navigation" id="Sec2"><a href="#section2">✼教育背景</a></div>
+            <div class="navigation" id="Sec3"><a href="#section3">✧专业技能</a></div>
+            <div class="navigation" id="Sec4"><a href="#section4">✞项目经验</a></div>
+            <div class="navigation" id="Sec5"><a href="#section5">⚮个人兴趣</a></div>
+            <div class="navigation" id="Sec6"><a href="#section6">☄自我评价</a></div>
+            <div class="navigation" id="Sec7"><a href="#section7">🌫我的文章</a></div>
+            <form>
+                <input placeholder="留言">
+                <button class="button1" onclick="button1()">写入</button>
+            </form>
+        </div>
+        <div class="left2"></div>
+        <div class="right">
+            <div class="logo">
+                <p id="time" style="color: white;"></p>
+            </div>
+            <div class="picture">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="./风景1.jpg" alt="Image 1">
+                        <img src="./风景2.jpg" alt="Image 2">
+                        <img src="./风景3.jpg" alt="Image 3">
+                        <!-- 添加图片副本 -->
+                        <img src="./风景1.jpg" alt="Image 1">
+                        <img src="./风景2.jpg" alt="Image 2">
+                        <img src="./风景3.jpg" alt="Image 3">
+                    </div>
+                    <button class="carousel-control1" id="changeLeft">←</button>
+                    <button class="carousel-control2" id="changeRight">→</button>
+                </div>
+            </div>
+            <div>
+                <dl>
+                    <dt id="section1">&nbsp;&nbsp;&nbsp;&nbsp;🔶基本信息</dt>
+                    <dd>- 性别：杨星辰</dd>
+                    <dd>- 性别：男</dd>
+                    <dd>- 年龄：22岁</dd>
+                    <dd>- 电话：138-12138-6699</dd>
+                    <dd>- 邮件：yangxingchen@qq.com</dd>
+                    <dd>- 地址：北京市海淀区脊妮小区1号楼3单元602室</dd>
+                </dl>
+            </div>
+            <div class="grey">
+                <dl>
+                    <dt id="section2">&nbsp;&nbsp;&nbsp;&nbsp;🔶教育背景</dt>
+                    <dd>- 学校名称：麻省理工学院（MIT）</dd>
+                    <dd>- 专业：软件工程</dd>
+                    <dd>- 学历：本科</dd>
+                    <dd>- 毕业时间：2027年</dd>
+                    <dd>- 主修课程：数据结构、算法设计、操作系统、数据库系统、计算机网络、软件工程原理等</dd>
+                    <dd>- 学术成就：GPA 4.0/4.0，获得全额奖学金，发表多篇顶级会议论文，获得论文杰出成就奖</dd>
+                </dl>
+            </div>
+            <div>
+                <dl>
+                    <dt id="section3">&nbsp;&nbsp;&nbsp;&nbsp;🔶专业技能</dt>
+                    <dd>
+                        <div style="display: flex;">
+                            <div class="text" style="background-color:cornflowerblue;margin-left: 10%;">
+                                ps
+                            </div>
+                            <div class="text" style="background-color:coral;margin-left: 10%;">
+                                html
+                            </div>
+                            <div class="text" style="background-color:lightseagreen;margin-left: 10%;">
+                                css
+                            </div>
+                            <div class="text" style="background-color:lightcoral;margin-left: 10%;">
+                                js
+                            </div>
+                        </div>
+                    </dd>
+                    <div style="position: relative;left: 150px;background-image: url(./比例图.png);background-size: contain;background-repeat: no-repeat;width: 100%;height: 500px;"></div>
+                    <dd>- 开发工具与环境：精通IntelliJ IDEA、Eclipse、Visual Studio Code等集成开发环境，熟悉Git、SVN等版本控制系统。</dd>
+                    <dd>- 框架与技术栈：深入理解Spring Boot、Hibernate、Django、React、Vue.js等后端和前端框架，能够快速搭建和维护现代Web应用程序。</dd>
+                    <dd>- 数据库技术：熟练使用MySQL、PostgreSQL进行数据库设计、优化和管理，具备SQL和NoSQL数据库的使用经验。</dd>
+                    <dd>-算法与数据结构：具备扎实的算法基础，能够在实际项目中应用排序、搜索、图论、动态规划等算法，以及链表、树、图等数据结构。</dd>
+                    <dd>- 软件工程实践：熟悉敏捷开发流程，包括Scrum和Kanban，能够在团队中担任开发者、测试员或Scrum Master等角色。</dd>
+                </dl>
+            </div>
+            <div class="grey">
+                <dt id="section4">&nbsp;&nbsp;&nbsp;&nbsp;🔶实习与项目经验</dt>
+                <div class="flex">
+                    <div class="project1">
+                        <dl>
+                            <dt>➸谷歌（Google）</dt>
+                            <dd>职位：软件开发工程师实习生</dd>
+                            <dd>工作时间：2022年6月至2022年9月</dd>
+                            <dd>项目描述：参与开发了一款用于优化云计算资源分配的智能调度系统，该系统通过机器学习算法提高了数据中心的能效和处理能力。在项目中，我负责设计和实现了核心的算法模块，并成功将系统的响应时间缩短了20%。
+                            </dd>
+                            <dd>技术栈：Python、TensorFlow、Google Cloud Platform</dd>
+                        </dl>
+                    </div>
+                    <div class="project2">
+                        <dl>
+                            <dt>➸特斯拉（Tesla）</dt>
+                            <dd>职位：软件工程师实习生</dd>
+                            <dd>工作时间：2021年12月至2022年3月</dd>
+                            <dd>项目描述：为特斯拉的自动驾驶系统贡献了代码，专注于改进车辆的环境感知能力。我参与了多传感器数据融合算法的开发，该算法显著提高了车辆在复杂交通场景下的识别准确性。</dd>
+                            <dd>技术栈：C++、ROS、自动驾驶传感器数据处理</dd>
+                        </dl>
+                    </div>
+
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div>
+                    <dl>
+                        <dt id="section5">&nbsp;&nbsp;&nbsp;&nbsp;🔶个人兴趣</dt>
+                        <dd>-编程挑战：积极参与在线编程竞赛，如LeetCode、Codeforces，不断提升解决复杂编程问题的能力。</dd>
+                        <dd>-开源贡献：参与开源项目，贡献代码，学习和实践最佳的软件开发实践。</dd>
+                        <dd>-技术研究：关注最新的技术动态和研究趋势，通过阅读技术博客、参加技术研讨会和网络课程来扩展知识边界。</dd>
+                        <dd>-棋类游戏：精通国际象棋，定期参加线上和线下的国际象棋比赛，享受策略思考和智力挑战。</dd>
+                        <dd>-极限运动：热衷于攀岩和滑翔伞，这些活动不仅锻炼了我的身体素质，也提高了我的心理素质和决策能力。</dd>
+                        <dd>-烹饪艺术：喜欢尝试不同国家的料理，通过烹饪来放松心情，同时也提升了我的创造力和对细节的关注。</dd>
+                        <dd>-公共演讲：积极参与Toastmasters国际演讲俱乐部，通过练习演讲来提高沟通技巧和自信心。</dd>
+                        <dd>-自然探索：热爱徒步和露营，通过这些活动亲近自然，培养了我的环境意识和生存技能。</dd>
+                        <dd>-电子产品改装：对智能手机和电脑的硬件改装感兴趣，通过这些活动学习电子工程的基础知识。</dd>
+                        <dd>-语言学习：除了英语，还在学习西班牙语和日语，通过语言学习开拓国际视野，提高跨文化交流能力。</dd>
+                        <dd>-虚拟现实（VR）开发：业余时间探索VR技术，尝试开发简单的VR应用程序，以跟上技术发展的前沿。</dd>
+                        <dd>-科幻文学：是科幻小说的忠实读者，通过阅读这些作品来激发我对未来科技的想象和创新思维。</dd>
+                        <dd>-社交媒体影响力：通过在不同社交媒体平台上分享技术见解和生活方式，建立了一定的影响力，这也锻炼了我的内容创作和社交网络管理能力。</dd>
+                    </dl>
+                </div>
+                <div style="margin-left: 20%;">
+                    <p>👉最近在看</p>
+                    <img src="./最近在看1.png" style="border-radius: 7%;">
+                    <img src="./最近在看2.png" style="border-radius: 7%;">
+                </div>
+
+            </div>
+
+            <div class="grey">
+                <dl>
+                    <dt id="section6">&nbsp;&nbsp;&nbsp;&nbsp;🔶自我评价</dt>
+                    <dd>作为一名对编程充满热情的软件工程专业学生，我不仅在学术上有着扎实的基础，而且在实际项目中展现了出色的问题解决能力和团队合作精神。我注重细节，追求技术的完美和创新，并能够在快节奏的工作环境中迅速适应和学习。我期待将我的技术能力和热情投入到未来的工作中，为团队和公司的成功做出贡献。我对编程的热爱不仅体现在我的专业学习中，还通过参与在线编程竞赛、开源项目贡献以及关注最新的技术动态来不断提升自己。我相信，这些经历将使我能够在未来的职业生涯中发挥关键作用，并为技术创新做出贡献。
+                    </dd>
+                </dl>
+
+            </div>
+
+            <div>
+                <dl>
+                    <dt id="section7">&nbsp;&nbsp;&nbsp;&nbsp;🔶我的文章</dt>
+                    <dd><img src="./文章1.png"></dd>
+                    <dd><img src="./文章2.png"></dd>
+                    <dd><img src="./文章3.png"></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // 时间
+        function updateTime() {
+            document.getElementById("time").innerHTML = new Date().getHours() + ":" + new Date().getMinutes();
+        }
+        updateTime()
+        setInterval(updateTime, 1000)
+
+        // 导航
+        function change() {
+            var Sect1 = document.getElementById('Sec1')
+            var Sect2 = document.getElementById('Sec2')
+            var Sect3 = document.getElementById('Sec3')
+            var Sect4 = document.getElementById('Sec4')
+            var Sect5 = document.getElementById('Sec5')
+            var Sect6 = document.getElementById('Sec6')
+            var Sect7 = document.getElementById('Sec7')
+
+            var rect2 = document.getElementById('section2').getBoundingClientRect().top;
+            var rect3 = document.getElementById('section3').getBoundingClientRect().top;
+            var rect4 = document.getElementById('section4').getBoundingClientRect().top;
+            var rect5 = document.getElementById('section5').getBoundingClientRect().top;
+            var rect6 = document.getElementById('section6').getBoundingClientRect().top;
+            var rect7 = document.getElementById('section7').getBoundingClientRect().top;
+
+            Sect1.style.backgroundColor = ""
+            Sect2.style.backgroundColor = ""
+            Sect3.style.backgroundColor = ""
+            Sect4.style.backgroundColor = ""
+            Sect5.style.backgroundColor = ""
+            Sect6.style.backgroundColor = ""
+            Sect7.style.backgroundColor = ""
+
+            if (rect2 > 0) { Sect1.style.backgroundColor = "Coral" }
+            else if (rect3 > 0) { Sect2.style.backgroundColor = "Coral" }
+            else if (rect4 > 0) { Sect3.style.backgroundColor = "Coral" }
+            else if (rect5 > 10) { Sect4.style.backgroundColor = "Coral" }
+            else if (rect6 > 0) { Sect5.style.backgroundColor = "Coral" }
+            else if (rect7 > 0) { Sect6.style.backgroundColor = "Coral" }
+            else { Sect7.style.backgroundColor = "Coral" }
+        }
+
+        change();
+
+        window.addEventListener('scroll', change);
+        window.addEventListener('resize', change);
+
+
+        document.getElementById('changeLeft').onclick = function () {
+            var slides = document.querySelector('.slides');
+            slides.style.animation = 'none';
+            var currentTranslate = parseFloat(slides.style.transform.replace('translateX(', '').replace(')', '')) || 0;
+            var newTranslate = currentTranslate + 16.66;
+            if (newTranslate > 0) {
+                newTranslate = -66.6666666666666666666666666666666666667;
+            }
+            slides.style.transform = `translateX(${newTranslate}%)`;
+        };
+
+        document.getElementById('changeRight').onclick = function () {
+            var slides = document.querySelector('.slides');
+            slides.style.animation = 'none';
+            var currentTranslate = parseFloat(slides.style.transform.replace('translateX(', '').replace(')', '')) || 0;
+            var newTranslate = currentTranslate - 16.6666666666666666666666666666666666667;
+            if (newTranslate < -83.4) {
+                newTranslate = 0;
+            }
+            slides.style.transform = `translateX(${newTranslate}%)`;
+        };
+
+        function button1() {
+            alert("感谢留言")
+        }
+    </script>
+</body>
+
+</html>

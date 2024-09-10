@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .big {
+            background-image: url(./渐变背景.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .small {
+            background-color: #FFCC99;
+            width: 30%;
+            height: 65%;
+            border-radius: 5%;
+            margin: 0;
+            opacity: 0.7;
+        }
+
+        .word {
+            font-size: 60px;
+        }
+
+        .top {
+            background-color: white;
+            width: 80%;
+            height: 100%;
+            border-radius: 5%;
+            font-size: 20px;
+        }
+
+        .top2 {
+            background-color: white;
+            width: 80%;
+            height: 150%;
+            border-radius: 5%;
+            font-size: 20px;
+        }
+
+        .Elastic {
+            display: flex;
+            width: 100%;
+            height: 10%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="small">
+            <p class="word">&nbsp;&nbsp;&nbsp;留言板</p>
+            <div class="Elastic">
+                <p style="font-size: 20px;">用户名:</p>
+                <input class="top">
+            </div>
+            <div class="Elastic">
+                <p style="font-size: 20px;">请留言:</p>
+                <input class="top2">
+            </div>
+            <button style="
+                font-size: 40px; 
+                display: block; 
+                margin: auto;
+                width: 20%;
+                height: 10%;
+                float: right;
+                position: relative;
+                top: 50px;
+                right: 30px;
+                border-radius: 10%;" onclick="success()">留言</button>
+        </div>
+    </div>
+    <script>
+        function success() {
+            alert("留言成功，感谢！点击确定后将返回原主页面")
+            window.location.href = "我的网站.html";
+        }
+    </script>
+</body>
+
+</html>

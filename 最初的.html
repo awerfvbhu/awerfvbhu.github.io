@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>我的网站</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .big {
+            background-image: url(./最初页背景.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    #loading {
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    p {
+      color: deepskyblue;
+      font-size: 25px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="big">
+    <div id="loading">
+      <p id="word"></p>
+    </div>
+  </div>
+
+  <script>
+    var sentence = "人生路漫漫，只要心怀梦想，脚踏实地，每一步都是向梦想迈进的勇敢践行"
+    var index = 0;
+
+    var timer = setInterval(function () {
+      var displayedText = sentence.substring(0, index);
+      document.getElementById("word").textContent = displayedText;
+      index++;
+      if (index > text.length) {
+        clearInterval(timer);
+      }
+    }, 100);
+
+
+    setTimeout(function () {
+      window.location.href = '我的网站.html';
+    }, 4000); 
+  </script>
+
+</body>
+
+</html>
