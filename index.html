@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机抽人游戏</title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            border-radius: 20px;
+        }
+
+        .class2 {
+            background-color: rgba(204, 204, 255, 0.5);
+            width: 200px;
+            height: 100px;
+        }
+
+        .class3 {
+            background-color: rgba(204, 204, 255);
+            width: 200px;
+            height: 40px;
+            position: relative;
+            top: -100px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>大一领航大学英语教材U1单词（自用）</p>
+    <button onclick="change()">抽取意思</button>
+    <button id="toggleBtn">显示单词</button>
+
+    <div class="class2">
+        <p id="get-name"></p>
+    </div>
+
+    <div class="class3" id="myDiv">
+    </div>
+
+
+
+    <script>
+        const name =
+            ['view<br><br>看待', 'incredibly<br><br>极其',
+                'attached<br><br>依恋', 'homesick<br><br>想家的',
+                'early on at an early stage of a situation<br><br>在开始阶段：起初',
+                'extroversion<br><br>外向性', 'serve<br><br>对…有用；能满足…的需要',
+                'overtake<br><br>(不愉快的事情)突然发生；超过', 'crippling<br><br>极有害的',
+                'intimidation<br><br>恐吓',
+                'come by<br><br>设法得到；找到',
+                'multiply<br><br>(使)成倍增加；(使)迅速增加',
+                'midterm<br><br>期中考试',
+                'knock sb down a peg (or two) <br><br>挫某人的锐气',
+                'add insult to injury<br><br>雪上加霜',
+                'actual<br><br>真实的',
+                "sustain <br><br>遭受",
+                "concussion <br><br>(脑、脊柱等的)震荡",
+                " utterly<br><br>完全地；彻底地",
+                " do well to be successful<br><br>成功",
+                "relate to <br><br>认同；发生共鸣",
+                "semester<br><br>学期",
+                "loneliness<br><br>孤单：孤独",
+                "option<br><br>选择",
+                "desperate<br><br>渴望的",
+                "fill out<br><br>填写(表格等)",
+                "put on a brave face<br><br>强装自信快乐",
+                "mere<br><br>仅仅的；只不过",
+                "uproot<br><br>(使)离开家园(或熟悉的地方等)",
+                "late<br><br>(人)已故的",
+                "vulnerable<br><br>(身体或感情上)脆弱的；易受...伤害的",
+                "convince<br><br>使确信",
+                "go through<br><br>经历；遭受",
+                "back and forth<br><br>来回地",
+                "physical therapist<br><br>理疗师",
+                "pediatrician<br><br>儿科医生",
+                "reflect<br><br>显示；表达",
+                "disinterest<br><br>无兴趣；冷漠",
+                "subpar<br><br>不到一般(或预期)水平的：低于标准的",
+                "pursuit<br><br>追求",
+                "economics<br><br>经济学",
+                "sophomore<br><br>(大学)二年级学生",
+                "consult<br><br>咨询",
+                "hang up<br><br>挂起来；不再使用",
+                "cleats<br><br>防滑鞋",
+                "transfer<br><br>(使)调动；转学；改变(环境)",
+                "soul-searching<br><br>反省；内省",
+                "come / get to grips with sth<br><br>开始理解并着手处理难题",
+                "transition<br><br>过渡；转变",
+                "emphasize<br><br>强调",
+                "appease<br><br>安抚",
+                "on one's own<br><br>独自地；独立地",
+                "coach<br><br>训练",
+                "break out of one's shell<br><br>(和人交谈时)放大胆子；不缩手缩脚",
+                "fulfilled<br><br>感到满足的",
+                "terrifying<br><br>可怕的",
+                "inevitability<br><br>必然性",
+                "embrace<br><br>乐意采纳(思想、建议等)",
+                "haircut<br><br>理发",
+            ]
+        function change() {
+            var div = document.getElementById('myDiv');
+            div.style.display = "block";
+            let x = Math.floor(Math.random() * name.length);
+            document.getElementById("get-name").innerHTML = name[x]
+        }
+
+
+
+        document.getElementById('toggleBtn').addEventListener('click', function () {
+            var div = document.getElementById('myDiv');
+            if (div.style.display === "none") {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
